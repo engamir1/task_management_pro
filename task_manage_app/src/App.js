@@ -1,11 +1,27 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import KanbanShowcase from './components/KanbanShowcase';
+import Testimonials from './components/Testimonials';
+import Pricing from './components/Pricing';
+import CTA from './components/CTA';
+import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h2> new TAsk MAnagemet App </h2>
-     </div>
+    <Router>
+      <Header />
+      <Hero />
+      <Features />
+      <KanbanShowcase />
+      <Testimonials />
+      <Pricing />
+      <CTA />
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;
