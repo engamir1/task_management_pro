@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -49,17 +49,33 @@ const Button = styled.button`
 `;
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
-    <HeaderContainer>
-      <Logo>TaskPro</Logo>
-      <Nav>
-        <NavLink to="/">Why TaskPro?</NavLink>
-        <NavLink to="/features">Features</NavLink>
-        <NavLink to="/pricing">Pricing</NavLink>
-        <NavLink to="/about">About</NavLink>
-      </Nav>
-      <Button>Sign Up</Button>
-    </HeaderContainer>
+    <>
+      <HeaderContainer>
+        <Logo>TaskPro</Logo>
+        <Nav>
+          <NavLink to="/">Why TaskPro?</NavLink>
+          {/* <NavLink to="/features">Features</NavLink> */}
+          <NavLink to="/pricing">Pricing</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/main">Main</NavLink>
+        </Nav>
+        <section><Button>Sign Up</Button>
+          <Button onClick={() => navigate('/login')}
+            style={{
+              padding: '8px 16px',
+              backgroundColor: '#007bff',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+            }}>LogIn</Button> </section>
+      </HeaderContainer>
+
+
+      <Outlet />
+    </>
   );
 };
 

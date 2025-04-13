@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -8,20 +8,30 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import MainBoard from './components/MainBoard';
+import Home from './components/Home';
+import Login from './components/Login';
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
-      <Hero />
-      <Features />
-      <KanbanShowcase />
-      <Testimonials />
-      <Pricing />
-      <CTA />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/main" element={<MainBoard />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <Footer />
-    </Router>
-  );
+    </BrowserRouter>);
 };
 
 export default App;
+
+
+
+
+        {/* <Route path="/features" element={<Features />} />
+        <Route path="/kanban" element={<KanbanShowcase />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/cta" element={<CTA />} /> */}
