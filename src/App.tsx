@@ -35,11 +35,11 @@ const App = () => (
                 <Route
                   path="/"
                   element={
-                    <ProtectedRoute>
+                    // <ProtectedRoute>
                       <Layout>
                         <Index />
                       </Layout>
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                   }
                 />
                 <Route
