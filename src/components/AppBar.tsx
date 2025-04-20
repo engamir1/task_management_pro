@@ -5,11 +5,12 @@ import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuL
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
 import { useSideMenu } from "@/contexts/SideMenuContext";
-import { useAuth } from "@/contexts/AuthContext";
+import { useDispatch } from "react-redux";
+import { logout } from "@/store/slices/authSlice";
 
 export function AppBar() {
   const location = useLocation();
-  const { logout } = useAuth();
+  const dispatch = useDispatch();
 
   const navigationItems = [
     { href: "/", label: "Dashboard" },
@@ -63,7 +64,7 @@ export function AppBar() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={logout}
+              onClick={() => dispatch(logout())}
               className="h-8 w-8"
               title="Logout"
             >
