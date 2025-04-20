@@ -1,49 +1,5 @@
 # State Management Documentation
 
-## Redux Implementation
-
-### Store Configuration
-The application uses Redux Toolkit for efficient state management. The store is configured in two locations:
-
-#### Main Store (src/store/index.ts)
-```typescript
-import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './slices/authSlice';
-
-export const store = configureStore({
-  reducer: {
-    auth: authReducer,
-  },
-});
-
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
-```
-
-### State Organization
-
-#### Authentication State
-- Manages user authentication status
-- Handles login/logout actions
-- Stores user information
-- Manages authentication tokens
-
-#### Task State
-- Manages task list and individual tasks
-- Handles task creation, updates, and deletion
-- Tracks task status changes
-- Manages task filtering and sorting
-
-#### Theme State
-- Controls application theme (light/dark)
-- Persists theme preferences
-- Handles system theme detection
-
-#### Side Menu State
-- Controls side menu visibility
-- Manages active menu items
-- Handles responsive behavior
-
 ## Context API Usage
 
 ### ThemeContext (src/contexts/ThemeContext.tsx)
