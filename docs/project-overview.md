@@ -36,13 +36,6 @@ The application follows a component-based architecture where UI elements are bro
 
 ### State Management
 
-The application uses Redux Toolkit for global state management. The store is configured in `src/store/index.ts` and includes:
-
-- Authentication state
-- Task management state
-- Theme preferences
-- Side menu state
-
 ### Context API Usage
 
 React Context is used for managing state that doesn't require global access:
