@@ -8,7 +8,7 @@ Task Management Pro is a React-based application that helps teams manage tasks, 
 
 - **React**: Frontend library for building user interfaces
 - **TypeScript**: Adds static typing to JavaScript
-- **Redux Toolkit**: State management solution
+- **contexts API**: State management solution
 - **Tailwind CSS**: Utility-first CSS framework
 - **Vite**: Build tool and development server
 
@@ -21,7 +21,6 @@ src/
 ├── hooks/          # Custom React hooks
 ├── lib/            # Utility functions and constants
 ├── pages/          # Route-level components
-├── redux/          # Redux store and slices
 └── store/          # Legacy store (being migrated)
 ```
 
